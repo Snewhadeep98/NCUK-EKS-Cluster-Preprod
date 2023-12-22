@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     dir('NCUK-EKS-Cluster-Preprod/kubernetes') {
-                        sh "aws eks update-kubeconfig --name myjenkins-server-eks-cluster --region eu-west-3"
+                        sh "aws eks update-kubeconfig --name NCUK-EKS-Cluster-Preprod --region eu-west-3"
                         sh "kubectl apply -f deployment.yaml"
                         sh "kubectl apply -f service.yaml"
                     }
